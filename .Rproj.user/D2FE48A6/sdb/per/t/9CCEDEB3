@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "## Bootstrap - dopasowanie danych do funkcji gęstości\n\nx <- seq(0, 1, by = 0.01)\n\nboot.beta.pdf <- sapply(1:1000, function(i) {\n  s <- sample(norm.rozwody, length(norm.rozwody), replace = TRUE)\n  mme <- fitdist(s, \"beta\", method = \"mme\")\n  d <- dbeta(x, shape1 = mme$estimate[\"shape1\"], shape2 = mme$estimate[\"shape2\"])\n  return(d)\n})\n\nplot(x = x, y = boot.beta.pdf[, 1], type = \"l\", col = rgb(0.8, 0.8, 0.8, alpha = 0.1), ylim = c(0, max(boot.beta.pdf)))\nfor(i in 2:ncol(boot.beta.pdf)) {\n  lines(x = x, y = boot.beta.pdf[ , i], col = rgb(0.8, 0.8, 0.8, alpha =  0.1))\n}\n\npdf.quantiles <- apply(boot.beta.pdf, 1, quantile, c(0.025, 0.5, 0.975))\nlines(x = x, y = pdf.quantiles[1, ], col = \"red\", lty = 2)\nlines(x = x, y = pdf.quantiles[3, ], col = \"red\", lty = 2)\nlines(x = x, y = pdf.quantiles[2, ], col = \"red\")\nlines(density(norm.rozwody))\n",
+    "created" : 1495743568850.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2884984319",
+    "id" : "9CCEDEB3",
+    "lastKnownWriteTime" : 1495743679,
+    "last_content_update" : 1495743679026,
+    "path" : "~/Dokumenty/blog/dopasowanie danych do rozkładu/bootstrap_pdf.R",
+    "project_path" : "bootstrap_pdf.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

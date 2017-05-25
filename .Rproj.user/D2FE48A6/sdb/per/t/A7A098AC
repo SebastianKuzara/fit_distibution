@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "## Rozkład beta wymaga danych z przedziału [0; 1] dlatego konieczna jest przeskalowanie danych\ndivorces$norm.rozwody <- (rozwody-min(rozwody))/(max(rozwody)-min(rozwody))\n\n\n## Wyznaczmy parametry rozkładów dla rozkładów branych pod uwagę\nfit.norm <- fitdist(norm.rozwody, \"norm\")\nfit.unif <- fitdist(norm.rozwody, \"unif\")\nfit.beta <- fitdist(norm.rozwody, \"beta\", method = \"mme\")",
+    "created" : 1495743050576.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2381351060",
+    "id" : "A7A098AC",
+    "lastKnownWriteTime" : 1495743217,
+    "last_content_update" : 1495743217702,
+    "path" : "~/Dokumenty/blog/dopasowanie danych do rozkładu/transform_and_fitdist.R",
+    "project_path" : "transform_and_fitdist.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

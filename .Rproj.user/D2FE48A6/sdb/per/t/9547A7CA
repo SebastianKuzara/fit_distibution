@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "## Wczytanie danych na temat rozwodów w przekroju Powiatów w 2015 roku\n## Rozwody na 1000 mieszkańców\n\ndivorces <- read.csv(\"data/LUDN_3427_CTAB_20170523203746.csv\", sep = \";\", dec = \",\", encoding = \"UTF-8\", stringsAsFactors = FALSE)\ndivorces <- divorces[ , -4]\nnames(divorces) <- c(\"kod\", \"powiat\", \"rozwody\")\ndivorces$kod <- as.character(divorces$kod)",
+    "created" : 1495742196951.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3599051542",
+    "id" : "9547A7CA",
+    "lastKnownWriteTime" : 1495742387,
+    "last_content_update" : 1495742387302,
+    "path" : "~/Dokumenty/blog/dopasowanie danych do rozkładu/load_data.R",
+    "project_path" : "load_data.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

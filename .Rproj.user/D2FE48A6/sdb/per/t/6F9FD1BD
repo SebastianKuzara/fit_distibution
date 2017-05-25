@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "## Symulacja Monte Carlo statystyki D\n## Rozkład beta\nds.beta <- replicate(10000, {\n  sym_data <- rbeta(length(norm.rozwody), \n                    shape1 = fit.beta$estimate[\"shape1\"], \n                    shape2 = fit.beta$estimate[\"shape2\"])\n  d <- ks.test(sym_data, \"pbeta\", \n               shape1 = fit.beta$estimate[\"shape1\"], \n               shape2 = fit.beta$estimate[\"shape2\"])$statistic\n  d\n})\nplot(ecdf(ds.beta), main = \"CDF rozkładu beta\")\n\nprint(\n  sum(ds.beta > ks.test(norm.rozwody, \"pbeta\",\n                        shape1 = fit.beta$estimate[\"shape1\"], \n                        shape2 = fit.beta$estimate[\"shape2\"])$statistic)/\n    length(ds.norm)\n)",
+    "created" : 1495743437626.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1429570964",
+    "id" : "6F9FD1BD",
+    "lastKnownWriteTime" : 1495743501,
+    "last_content_update" : 1495743501129,
+    "path" : "~/Dokumenty/blog/dopasowanie danych do rozkładu/monte_carlo_beta.R",
+    "project_path" : "monte_carlo_beta.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

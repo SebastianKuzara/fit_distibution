@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "## Graf Cullena-Freya\ndescdist(rozwody)",
+    "created" : 1495742538750.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "328409308",
+    "id" : "1FA9819A",
+    "lastKnownWriteTime" : 1495742559,
+    "last_content_update" : 1495742559927,
+    "path" : "~/Dokumenty/blog/dopasowanie danych do rozkładu/cullen-frey_graph.R",
+    "project_path" : "cullen-frey_graph.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

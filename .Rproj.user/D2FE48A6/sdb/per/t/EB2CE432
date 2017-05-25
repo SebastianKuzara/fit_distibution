@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "## Symulacja Monte Carlo\n## Wyznaczanie statystyki testu Kolmogorova-Smirnova dla wskazanych rozkładów\n\n## Symulacja danych za pomocą metody Monte Carlo z dwóch rozkładów branych pod uwagę\n\n## Rozkład normalny\nset.seed(123)\nds.norm <- replicate(10000, {\n  sym_data <- rnorm(length(norm.rozwody), \n                    mean = fit.norm$estimate[\"mean\"], \n                    sd = fit.norm$estimate[\"sd\"])\n  d <- ks.test(sym_data, \"pnorm\",\n               mean = fit.norm$estimate[\"mean\"], \n               sd = fit.norm$estimate[\"sd\"])$statistic\n  d\n})\nplot(ecdf(ds.norm), main = \"CDF rozkładu normalnego\")\n\nprint(\n  sum(ds.norm > ks.test(norm.rozwody, \"pnorm\",\n                        mean = fit.norm$estimate[\"mean\"], \n                        sd = fit.norm$estimate[\"sd\"])$statistic)/\n    length(ds.norm)\n)",
+    "created" : 1495743226525.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "774064207",
+    "id" : "EB2CE432",
+    "lastKnownWriteTime" : 1495743375,
+    "last_content_update" : 1495743375226,
+    "path" : "~/Dokumenty/blog/dopasowanie danych do rozkładu/monte_carlo.R",
+    "project_path" : "monte_carlo.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
